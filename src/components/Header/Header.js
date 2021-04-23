@@ -12,15 +12,20 @@ const Header = () => {
     <header>
       <SuperHeader />
       <MainHeader>
-        <Logo />
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
+        <AlignmentWrapper>
+          <LogoWrapper>
+            <Logo />
+          </LogoWrapper>
+          <Nav>
+            <NavLink href="/sale">Sale</NavLink>
+            <NavLink href="/new">New&nbsp;Releases</NavLink>
+            <NavLink href="/men">Men</NavLink>
+            <NavLink href="/women">Women</NavLink>
+            <NavLink href="/kids">Kids</NavLink>
+            <NavLink href="/collections">Collections</NavLink>
+          </Nav>
+          <Spacing />
+        </AlignmentWrapper>
       </MainHeader>
     </header>
   );
@@ -29,9 +34,32 @@ const Header = () => {
 const MainHeader = styled.div`
   padding: 0 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  height: 72px;
+  display: flex;
+  align-items: center;
 `;
 
-const Nav = styled.nav``;
+const AlignmentWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+`;
+
+const LogoWrapper = styled.div`
+  flex: 1;
+`;
+
+const Spacing = styled.div`
+  flex: 1;
+`;
+
+const Nav = styled.nav`
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  margin-left: 48px;
+  margin-right: 48px;
+`;
 
 const NavLink = styled.a`
   font-size: 1.125rem;
